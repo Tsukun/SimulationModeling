@@ -1,0 +1,10 @@
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\bin\Debug\lab1.exe.config
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\bin\Debug\lab1.exe
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\bin\Debug\lab1.pdb
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.csprojAssemblyReference.cache
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.Form1.resources
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.Properties.Resources.resources
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.exe
+E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.pdb
