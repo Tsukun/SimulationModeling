@@ -8,3 +8,12 @@ E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.cs
 E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
 E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.exe
 E:\Users\User\Documents\LabGroup3\SimulationModeling\lab1\lab1\obj\Debug\lab1.pdb
+D:\githubpr\SimulationModeling\lab1\lab1\bin\Debug\lab1.exe.config
+D:\githubpr\SimulationModeling\lab1\lab1\bin\Debug\lab1.exe
+D:\githubpr\SimulationModeling\lab1\lab1\bin\Debug\lab1.pdb
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.csprojAssemblyReference.cache
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.Form1.resources
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.Properties.Resources.resources
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.exe
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.pdb
