@@ -71,7 +71,7 @@ namespace lab1
         }
         double ModPoisson(double m)
         {
-            int k = 0;
+            int k = 1;
             double randnumber = rand.NextDouble();
 
             while (randnumber > Math.Exp(-m))
@@ -79,7 +79,7 @@ namespace lab1
                 randnumber *= rand.NextDouble();
                 k++;
             }
-            chart1.Series[0].Points.AddXY(Math.Exp(-m), randnumber);
+            chart1.Series[0].Points.AddXY(Math.Exp(-m), k-1);
             return (double)1/k;
         }
 
@@ -101,10 +101,14 @@ namespace lab1
             double emp = EmpPoisson(mx, P);
             double theor = TheorPoisson(P, mx);
             double mod = ModPoisson(mx);
+            double xiemp = CriterionPearson(emp, theor);
+            double ximod = CriterionPearson(mod, theor);
             textBox1.Text = "EmpPoison frequency =" + emp + '\r' + '\n';
             textBox1.Text += "TheorPoison frequency=" + theor + '\r' + '\n';
             textBox1.Text += "ModPoison frequency=" + mod + '\r' + '\n';
-            textBox1.Text += "Poison > ModPoison? " + Compare(CriterionPearson(emp, theor), CriterionPearson(mod, theor));
+            textBox1.Text += "Poison xi^2=" + xiemp+ '\r' + '\n';
+            textBox1.Text += "ModPoison xi^2=" + ximod + '\r' + '\n';
+            textBox1.Text += "Poison > ModPoison? " + Compare(xiemp,ximod);
         }
 
      
