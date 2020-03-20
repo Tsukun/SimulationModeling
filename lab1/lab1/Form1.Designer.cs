@@ -60,10 +60,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 12);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 112);
+            this.textBox1.Size = new System.Drawing.Size(249, 112);
             this.textBox1.TabIndex = 2;
             // 
             // chart1

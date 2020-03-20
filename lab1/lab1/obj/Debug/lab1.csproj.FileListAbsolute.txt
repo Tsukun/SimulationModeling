@@ -17,3 +17,4 @@ D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.Properties.Resources.res
 D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
 D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.exe
 D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.pdb
+D:\githubpr\SimulationModeling\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache

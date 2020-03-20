@@ -38,15 +38,17 @@ namespace lab1
         {
             int i;
             int n;
+            int count = 0;
             int countinter= Convert.ToInt32(textBox3.Text);
             double[] interval = new double[countinter];
             int[] temp = new int[countinter];
-            interval[0] = P/ countinter;
-            for (int j = 1; j < countinter; j++)
-                interval[j] = interval[0] + interval[0] * j;
-            int count = 0;
             n = (int)Math.Floor(m / P);
             double[] arr = new double[n];
+
+            interval[0] = 0;
+            for (int j = 1; j < countinter; j++)
+            interval[j] = P / countinter * j;
+
             for (i = 0; i < n; i++)
             {
                 double E = rand.NextDouble();
@@ -57,32 +59,28 @@ namespace lab1
                 }
                 
             }
-            for (int k = 0; k < countinter; k++)
+            for (int k = 1; k < countinter; k++)
                 for (int j = 0; j < n; j++)
-                    if (arr[j] < interval[k])
-                    {
+                    if (arr[j] < interval[k] && arr[j] > interval[k - 1])
                         temp[k]++;
-                        break;
-                    }
 
             for (int j = 0; j < countinter; j++)
                 chart2.Series[0].Points.AddXY(interval[j], temp[j]);
+
             return (double)count / (i + 1);
         }
         double ModPoisson(double m)
         {
-            int k = 1;
+            int k = 0;
             double randnumber = rand.NextDouble();
-            if (randnumber < Math.Exp(-m))
-                return 1;
 
             while (randnumber > Math.Exp(-m))
             {
                 randnumber *= rand.NextDouble();
                 k++;
-                chart1.Series[0].Points.AddXY(k, randnumber);
             }
-            return (double)1 / k;
+            chart1.Series[0].Points.AddXY(Math.Exp(-m), randnumber);
+            return (double)1/k;
         }
 
         double CriterionPearson(double v1, double v2)
@@ -99,7 +97,6 @@ namespace lab1
             chart1.Series[0].Points.Clear();
             chart2.Series[0].Points.Clear();
             double mx = Convert.ToInt32(textBox2.Text);
-            //Random ran = new Random();
             double P = 0.1 + rand.NextDouble() % 0.1;
             double emp = EmpPoisson(mx, P);
             double theor = TheorPoisson(P, mx);
