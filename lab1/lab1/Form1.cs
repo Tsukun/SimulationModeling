@@ -27,91 +27,121 @@ namespace lab1
 
             return x;
         }
-        double TheorPoisson(double p, double mx)
+        int[] TheorPoisson(double p, double mx)
         {
-            double n = Math.Floor(mx / p);
-            int m =(int)Math.Floor(p * n);
-            double P = (Math.Pow(mx, m) / factorial(m)) * Math.Exp(-mx);
-            return P;
-        }
-        double EmpPoisson(double m, double P)
-        {
-            int i;
-            int n;
-            int count = 0;
-            int countinter= Convert.ToInt32(textBox3.Text);
-            double[] interval = new double[countinter];
-            int[] temp = new int[countinter];
-            n = (int)Math.Floor(m / P);
-            double[] arr = new double[n];
-
-            interval[0] = 0;
-            for (int j = 1; j < countinter; j++)
-            interval[j] = P / countinter * j;
-
-            for (i = 0; i < n; i++)
-            {
-                double E = rand.NextDouble();
-                if (P > E)
+            int n = (int)Math.Floor(mx / p);
+            int countiter = Convert.ToInt32(textBox3.Text);
+            int countInterval = Convert.ToInt32(textBox4.Text);
+            int[] arr = new int[n];
+            double P;
+            for (int i = 0; i < countiter; i++) 
+            {              
+               
+                for (int j = 0; j < n; j++) 
                 {
-                    count++;
-                    arr[i] = E;
+                    P = (Math.Pow(mx, j) / factorial(j)) * Math.Exp(-mx);
+                    double ran = rand.NextDouble();
+                    if (ran<=P)
+                       arr[j] +=1;
                 }
-                
+               
             }
-            for (int k = 1; k < countinter; k++)
-                for (int j = 0; j < n; j++)
-                    if (arr[j] < interval[k] && arr[j] > interval[k - 1])
-                        temp[k]++;
-
-            for (int j = 0; j < countinter; j++)
-                chart2.Series[0].Points.AddXY(interval[j], temp[j]);
-
-            return (double)count / (i + 1);
+            for (int i = 0; i < n; i++)
+                chart3.Series[0].Points.AddXY(i, arr[i]);
+            return arr;
         }
-        double ModPoisson(double m)
+        int[] EmpPoisson(double m, double P)
         {
-            int k = 1;
-            double randnumber = rand.NextDouble();
-
-            while (randnumber > Math.Exp(-m))
+            int n = (int)Math.Floor(m / P);
+            int countiter= Convert.ToInt32(textBox3.Text);
+            int countInterval = Convert.ToInt32(textBox4.Text);
+            int[] arr = new int[countiter];
+            int[] freq = new int[countInterval+1];
+            for (int j = 0; j < countiter; j++)
             {
-                randnumber *= rand.NextDouble();
-                k++;
+                int counter = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    double E = rand.NextDouble();
+                    if (P > E)
+                    {
+                        counter++;
+                    }
+                }
+                arr[j] = counter;
             }
-            chart1.Series[0].Points.AddXY(Math.Exp(-m), k-1);
-            return (double)1/k;
+          
+                for (int j = 0; j < countInterval + 1; j++) 
+                {
+
+                for (int i = 0; i < countiter; i++)
+                {
+                    if (arr[i] == j)
+                        freq[j] += 1;
+                }
+                }
+            
+
+                for (int i = 0; i < countInterval+1; i++)
+                chart2.Series[0].Points.AddXY(i, freq[i]);
+
+            return freq;
+        }
+        int[] ModPoisson(double m)
+        {
+            int countiter = Convert.ToInt32(textBox3.Text);
+            int countInterval = Convert.ToInt32(textBox4.Text);
+            int[] arr = new int[countiter];
+            int[] freq = new int[countInterval + 1];
+            for (int i = 0; i < countiter; i++)
+            {
+                double randnumber = rand.NextDouble();
+                int k = 0;
+                while (randnumber > Math.Exp(-m))
+                {
+                    randnumber *= rand.NextDouble();
+                    k++;
+                }
+                arr[i] =k;
+            }
+            for (int j = 0; j < countInterval + 1; j++)
+            {
+                for (int i = 0; i < countiter; i++)
+                {
+                    if (arr[i] == j)
+                        freq[j] += 1;
+                }
+            }
+            for (int i = 0; i < countInterval + 1; i++)
+                chart1.Series[0].Points.AddXY(i, freq[i]);
+            return freq;
         }
 
-        double CriterionPearson(double v1, double v2)
+        double CriterionPearson(int[] v1, int[] v2)
         {
-            double xi = Math.Pow((v1 - v2 * 0.5f), 2) / (v2 * 0.5f);
+            double xi=0;
+            for (int i = 0; i < v1.Length; i++) 
+            {
+                if(v2[i]!=0)
+                xi+= Math.Pow((v1[i] - v2[i]), 2) / v2[i];
+            }
             return xi;
         }
-        bool Compare(double xi1, double xi2)
-        {
-            return xi1 < xi2;
-        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             chart1.Series[0].Points.Clear();
             chart2.Series[0].Points.Clear();
+            chart3.Series[0].Points.Clear();
             double mx = Convert.ToInt32(textBox2.Text);
-            double P = 0.1 + rand.NextDouble() % 0.1;
-            double emp = EmpPoisson(mx, P);
-            double theor = TheorPoisson(P, mx);
-            double mod = ModPoisson(mx);
-            double xiemp = CriterionPearson(emp, theor);
-            double ximod = CriterionPearson(mod, theor);
-            textBox1.Text = "EmpPoison frequency =" + emp + '\r' + '\n';
-            textBox1.Text += "TheorPoison frequency=" + theor + '\r' + '\n';
-            textBox1.Text += "ModPoison frequency=" + mod + '\r' + '\n';
-            textBox1.Text += "Poison xi^2=" + xiemp+ '\r' + '\n';
-            textBox1.Text += "ModPoison xi^2=" + ximod + '\r' + '\n';
-            textBox1.Text += "Poison > ModPoison? " + Compare(xiemp,ximod);
+            double P = 0.2;
+            double xiemp = CriterionPearson(EmpPoisson(mx,P), TheorPoisson(P,mx));
+            double ximod = CriterionPearson(ModPoisson(mx), TheorPoisson(P, mx));
+            textBox1.Text = "P =" + P + '\r' + '\n';
+            textBox1.Text += "Метод Пуассона критерий xi^2=" + xiemp+ '\r' + '\n';
+            textBox1.Text += "Модифицированный метод Пуассона критерий xi^2=" + ximod + '\r' + '\n';
         }
 
-     
     }
 
 }
