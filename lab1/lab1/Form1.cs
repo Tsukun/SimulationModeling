@@ -135,8 +135,9 @@ namespace lab1
             chart3.Series[0].Points.Clear();
             double mx = Convert.ToInt32(textBox2.Text);
             double P = 0.2;
-            double xiemp = CriterionPearson(EmpPoisson(mx,P), TheorPoisson(P,mx));
-            double ximod = CriterionPearson(ModPoisson(mx), TheorPoisson(P, mx));
+            int[] theorArray = TheorPoisson(P, mx);
+            double xiemp = CriterionPearson(EmpPoisson(mx,P),theorArray);
+            double ximod = CriterionPearson(ModPoisson(mx), theorArray);
             textBox1.Text = "P =" + P + '\r' + '\n';
             textBox1.Text += "Метод Пуассона критерий xi^2=" + xiemp+ '\r' + '\n';
             textBox1.Text += "Модифицированный метод Пуассона критерий xi^2=" + ximod + '\r' + '\n';
