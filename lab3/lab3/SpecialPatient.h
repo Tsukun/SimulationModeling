@@ -37,6 +37,8 @@ SpecialPatient& SpecialPatient::operator=(const SpecialPatient& patient)
 }
 void SpecialPatient::healthUp() 
 {
-		HealthRating +=0,2+rand() % 1;
+	double a;
+	a = (rand() / double(RAND_MAX));
+		HealthRating +=0.2+a;
 		t++;
 }

@@ -1,8 +1,12 @@
 ﻿  Source.cpp
-D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(26,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(8,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(26,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(25): message : во время компиляции функции-члена класс шаблон "Hospital<DtPatient>::Hospital(void)"
-D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "Hospital<DtPatient>::Hospital(void)"
-D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(9): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Hospital<DtPatient>"
-  lab3.vcxproj -> D:\githubpr\SimulationModeling\lab3\Debug\lab3.exe
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Hospital.h(33,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Source.cpp(9,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Hospital.h(33,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Hospital.h(30): message : во время компиляции функции-члена класс шаблон "Hospital<DtPatient>::Hospital(void)"
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Source.cpp(10): message : выполняется компиляция ссылки на экземпляр шаблон функции "Hospital<DtPatient>::Hospital(void)"
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Source.cpp(10): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Hospital<DtPatient>"
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Hospital.h(157,16): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Hospital.h(154): message : во время компиляции функции-члена класс шаблон "void Hospital<DtPatient>::statistic(int)"
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Source.cpp(16): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Hospital<DtPatient>::statistic(int)"
+C:\Users\123\source\repos\SimulationModeling\lab3\lab3\Hospital.h(165,17): warning C4018: <: несоответствие типов со знаком и без знака
+  lab3.vcxproj -> C:\Users\123\source\repos\SimulationModeling\lab3\Debug\lab3.exe
