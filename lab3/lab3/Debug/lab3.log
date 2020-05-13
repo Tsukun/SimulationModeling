@@ -1,8 +1,8 @@
 ﻿  Source.cpp
-D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(21,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(26,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(8,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(21,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(20): message : во время компиляции функции-члена класс шаблон "Hospital<SpecialPatient>::Hospital(void)"
-D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "Hospital<SpecialPatient>::Hospital(void)"
-D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(9): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Hospital<SpecialPatient>"
+D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(26,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\githubpr\SimulationModeling\lab3\lab3\Hospital.h(25): message : во время компиляции функции-члена класс шаблон "Hospital<DtPatient>::Hospital(void)"
+D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "Hospital<DtPatient>::Hospital(void)"
+D:\githubpr\SimulationModeling\lab3\lab3\Source.cpp(9): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Hospital<DtPatient>"
   lab3.vcxproj -> D:\githubpr\SimulationModeling\lab3\Debug\lab3.exe

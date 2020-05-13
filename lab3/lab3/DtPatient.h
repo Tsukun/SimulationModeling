@@ -11,7 +11,7 @@ public:
 	DtPatient& operator=(const DtPatient& patient);
 	void healthUp();
 	void setHealth(int HealthRating) { this->HealthRating = HealthRating; };
-	void setTime(int t) { this->t = t; };
+	void setTime(int t) { this->t=t; };
 	int getTime() { return t; };
 	double getHealthRating() { return HealthRating; };
 private:
@@ -37,8 +37,7 @@ DtPatient& DtPatient::operator=(const DtPatient& patient)
 }
 void DtPatient::healthUp()
 {
-	if (t >= 24 * 3600)
-	{
 		HealthRating +=2;
-	}
+		t++;
+
 }

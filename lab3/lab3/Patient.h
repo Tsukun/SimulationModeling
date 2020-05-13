@@ -11,7 +11,7 @@ public:
 	Patient& operator=(const Patient& patient);
 	virtual void healthUp() {};
 	virtual void setHealth(int HealthRating){this->HealthRating = HealthRating;};
-	virtual void setTime(int t){this->t = t;};
+	virtual void setTime(int t) { this->t = t; }
 	virtual int getTime() { return t; };
 	virtual double getHealthRating() { return HealthRating; };
 private:
@@ -20,7 +20,6 @@ private:
 };
 Patient::Patient()
 {
-
 	HealthRating = 0;
 	t = 0;
 }

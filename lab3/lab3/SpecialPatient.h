@@ -37,8 +37,6 @@ SpecialPatient& SpecialPatient::operator=(const SpecialPatient& patient)
 }
 void SpecialPatient::healthUp() 
 {
-	if (t >= 24 * 3600) 
-	{
 		HealthRating +=0,2+rand() % 1;
-	}
+		t++;
 }
